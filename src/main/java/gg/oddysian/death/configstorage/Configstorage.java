@@ -7,6 +7,8 @@ import net.minecraftforge.fml.common.Mod;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import java.io.File;
+import java.io.IOException;
+
 import gg.oddysian.death.configstorage.handlers.FileHandler;
 import gg.oddysian.death.configstorage.config.TestConfig;
 
@@ -30,14 +32,12 @@ public class Configstorage {
     public static Configstorage INSTANCE;
 
     @Mod.EventHandler
-    public void preinit(FMLPreInitializationEvent event) {
-        configDir = new File(event.getModConfigurationDirectory() + "/");
-        config.mkdir();
-        config = new File(configDir, "/Configstorage/config.conf");
+    public void preinit(FMLPreInitializationEvent event) throws IOException {
+        configDir = new File(event.getModConfigurationDirectory() + "//HandoutConfig//");
+        configDir.mkdir();
+        config = new File(configDir, "config.conf");
+        config.createNewFile();
 
-        FileHandler.loadConfigFile(Configstorage.config);
-        FileHandler.existanceCheck();
-        FileHandler.writeConfigFile(Configstorage.config);
 
     }
 

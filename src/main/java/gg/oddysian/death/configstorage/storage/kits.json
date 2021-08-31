@@ -1,0 +1,32 @@
+{
+  "name": "storage",
+  "version": "1.0.0",
+  "dependencies": {
+  },
+"Kitliste": [
+  {
+    "Handouts1":
+  [
+    {
+      "Itemname": "minecraft:stone",
+      "amount": 3,
+      "tag": null
+    },
+    {
+      "Itemname": "minecraft:dirt",
+      "amount": 5,
+      "tag": null
+    },
+    {
+      "Itemname": "minecraft:tnt",
+      "amount": 7,
+      "tag": null
+    }
+  ]
+  },
+  {
+    "Handouts2": [
+    ]
+  }
+  ]
+}
