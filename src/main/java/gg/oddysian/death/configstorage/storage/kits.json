@@ -8,17 +8,17 @@
     "Handouts1":
   [
     {
-      "Itemname": "minecraft:stone",
+      "itemname": "minecraft:stone",
       "amount": 3,
       "tag": null
     },
     {
-      "Itemname": "minecraft:dirt",
+      "itemname": "minecraft:dirt",
       "amount": 5,
       "tag": null
     },
     {
-      "Itemname": "minecraft:tnt",
+      "itemname": "minecraft:tnt",
       "amount": 7,
       "tag": null
     }
@@ -26,6 +26,16 @@
   },
   {
     "Handouts2": [
+      {
+        "itemname": "minecraft:diamond",
+        "amount": 6,
+        "tag": null
+      },
+      {
+        "itemname": "minecraft:apple",
+        "amount": 50,
+        "tag": null
+      }
     ]
   }
   ]
