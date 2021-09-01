@@ -1,6 +1,6 @@
-package gg.oddysian.death.configstorage;
+package gg.oddysian.death.deathskits;
 
-import gg.oddysian.death.configstorage.commands.CommandHandout;
+import gg.oddysian.death.deathskits.commands.CommandHandout;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
@@ -11,21 +11,21 @@ import org.apache.logging.log4j.Logger;
 import java.io.File;
 import java.io.IOException;
 
-import gg.oddysian.death.configstorage.handlers.FileHandler;
-import gg.oddysian.death.configstorage.config.TestConfig;
+import gg.oddysian.death.deathskits.handlers.FileHandler;
+import gg.oddysian.death.deathskits.config.KitsConfig;
 
 
 @Mod(
-        modid = Configstorage.MOD_ID,
-        name = Configstorage.MOD_NAME,
-        version = Configstorage.VERSION,
+        modid = Deathskits.MOD_ID,
+        name = Deathskits.MOD_NAME,
+        version = Deathskits.VERSION,
         serverSideOnly = true,
         acceptableRemoteVersions = "*"
 )
-public class Configstorage {
+public class Deathskits {
 
-    public static final String MOD_ID = "configstorage";
-    public static final String MOD_NAME = "Configstorage";
+    public static final String MOD_ID = "deathskits";
+    public static final String MOD_NAME = "Deathskits";
     public static final String VERSION = "1.0-SNAPSHOT";
 
     public static Logger log = LogManager.getLogger(MOD_NAME);
@@ -33,11 +33,11 @@ public class Configstorage {
     public static File configDir;
 
     @Mod.Instance(MOD_ID)
-    public static Configstorage INSTANCE;
+    public static Deathskits INSTANCE;
 
     @Mod.EventHandler
     public void preinit(FMLPreInitializationEvent event) throws IOException {
-        log.info("Death's handout plugin has joined the battlefield to give you all the handouts!!!");
+        log.info("Death's kits plugin has joined the battlefield to give you all the kits!!!");
         configDir = new File(event.getModConfigurationDirectory() + "//HandoutConfig//");
         configDir.mkdir();
         config = new File(configDir, "config.conf");
