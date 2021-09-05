@@ -2,6 +2,7 @@ package gg.oddysian.death.deathskits.commands;
 
 import gg.oddysian.death.deathskits.handlers.FileHandler;
 import gg.oddysian.death.deathskits.objects.Kit;
+import gg.oddysian.death.deathskits.objects.KitStorage;
 import net.minecraft.command.CommandBase;
 import net.minecraft.command.CommandException;
 import net.minecraft.command.ICommandSender;
@@ -37,13 +38,21 @@ public class CommandHandout extends CommandBase {
         }
 
         if (args[0] == "list"){
-            //TODO: list argument is supposed to send a message to the sender, listing all kitnames from kits.json
             String msg = "Available kits: ";
-            for (Kit kit : KitsConfig.kits){
+            for (Kit kit : KitStorage.kits){
                 msg += kit.getName() + " ";
             }
             sender.sendMessage(new TextComponentString(msg));
         }
+
+        if (args[0] != "list" && args[0] != "" && args[0] != null){
+            for (int i = 0; i < KitStorage.kitAmount; i++){
+                if (KitStorage.kits[i].getName() == args[0]){
+                    //TODO: implement a function to actually handout the items
+                }
+            }
+        }
+
     }
 
     public void giveKit(Kit kit, EntityPlayerMP sender){
